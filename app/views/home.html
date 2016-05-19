@@ -14,25 +14,7 @@
 <section class="container-fluid">
   <div class="row">
     <div class="contacts col-xs-3">
-      <div class="contact">
-        <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-        <div>
-          <p>Leanne Graham</p>
-          <p>Bret</p>
-          <p><img src="">Sincere@april.biz</p>
-        </div>
-        <div class="more"> > </div>
-      </div>
-      <div class="contact">
-        <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-        <div>
-          <p>Leanne Graham</p>
-          <p>Bret</p>
-          <p><img src="">Sincere@april.biz</p>
-        </div>
-        <div class="more"> > </div>
-      </div>
-      <div class="contact">
+      <div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="contact">
         <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
         <div>
           <p>Leanne Graham</p>
@@ -57,7 +39,7 @@
             <h5>Latest Posts</h5>
             <hr>
           </div>
-          <div class="post">
+          <div ng-repeat="i in [1, 2, 3]" class="post">
             <h4 class="title">
               sunt aut facere repellat provident occaecati excepturi optio reprehenderit
             </h4>
@@ -69,19 +51,7 @@
               <div class="show-more">show all <span> > </span></div>
             </div>
             <div class="comments">
-              <div class="comment">
-                <p>
-                  laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium
-                </p>
-                <span>emailicon</span><span>Eliseo@gardner.biz</span>
-              </div>
-              <div class="comment">
-                <p>
-                  laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium
-                </p>
-                <span>emailicon</span><span>Eliseo@gardner.biz</span>
-              </div>
-              <div class="comment">
+              <div ng-repeat="i in [1, 2, 3]" class="comment">
                 <p>
                   laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium
                 </p>
