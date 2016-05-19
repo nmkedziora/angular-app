@@ -33,3 +33,21 @@
     margin: 20px 25px 0 50px;
   }
 }
+
+.contact-details {
+  padding-top: 50px;
+}
+
+.details-title {
+  h5 {
+    text-transform: uppercase;
+  }
+  hr {
+    width: 15px;
+    border: 2px solid $mainHighlighted;
+    color: $mainHighlighted;
+    text-align: left;
+    margin-left: 0;
+    margin-top: -5px;
+  }
+}
