@@ -30,6 +30,8 @@ angular.module('app').config(onConfig);
 
 angular.module('app').run(onRun);
 
+angular.module("test", ["angular-bootstrap-glyphicon"]);
+
 angular.bootstrap(document, ['app'], {
   strictDi: true
 });

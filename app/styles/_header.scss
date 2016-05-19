@@ -1,0 +1,22 @@
+header {
+  height: 60px;
+  background-color: $mainColor;
+  color: #FFF;
+  border-bottom: 1px solid #999;
+  padding-top: 17px;
+  .logo {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 25px;
+      padding-bottom: 17px;
+  }
+  .user-info {
+    font-size: 11px;
+    color: #FFF;
+    height: 100px;
+  }
+}
+
+.text-highlighted {
+  color: $mainHighlighted;
+}

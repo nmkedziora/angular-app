@@ -1,0 +1,24 @@
+.contacts {
+  height: 110px;
+  padding-right: 0;
+  .contact {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    img {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .more {
+      position: absolute;
+      width: 20px;
+      top: 0;
+      right: 0;
+    }
+  }
+  div {
+    height: 100%;
+    vertical-align: top;
+    display: inline-block;
+  }
+}
