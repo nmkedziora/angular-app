@@ -5,8 +5,8 @@ function ExampleService($http) {
 
   service.get = function() {
     return new Promise((resolve, reject) => {
-      $http.get('apiPath').success((data) => {
-        resolve(data);
+      $http.get('http://jsonplaceholder.typicode.com/posts/1').success((data) => {
+        var test = resolve(data);
       }).error((err, status) => {
         reject(err, status);
       });
