@@ -10,22 +10,18 @@ header {
       line-height: 25px;
       padding-bottom: 17px;
   }
-  .user-info {
-    font-size: 11px;
-    color: #FFF;
-    height: 100px;
+  .profile {
+    .details {
+      background-color: $colorHighlighted;
+      color: #000;
+      z-index: 10;
+      position: absolute;
+      top: 43px;
+      width: 100%;
+    }
   }
 }
 
 .text-highlighted {
-  color: $mainHighlighted;
-}
-
-.profile-details {
-  background-color: $mainHighlighted;
-  color: #000;
-  z-index: 10;
-  position: absolute;
-  top: 43px;
-  width: 100%;
+  color: $colorHighlighted;
 }

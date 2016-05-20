@@ -23,7 +23,7 @@
   }
 }
 
-.vcard {
+.user {
   background-color: $mainColor;
   height: 200px;
   padding-top: 80px;
@@ -34,22 +34,21 @@
   }
 }
 
-.contact-details {
+.user-details {
   padding-top: 50px;
   background-color: lightgrey;
-}
-
-.details-title {
-  h5 {
-    text-transform: uppercase;
-  }
-  hr {
-    width: 15px;
-    border: 2px solid $mainHighlighted;
-    color: $mainHighlighted;
-    text-align: left;
-    margin-left: 0;
-    margin-top: -5px;
+  .title {
+    h5 {
+      text-transform: uppercase;
+    }
+    hr {
+      width: 15px;
+      border: 2px solid $colorHighlighted;
+      color: $colorHighlighted;
+      text-align: left;
+      margin-left: 0;
+      margin-top: -5px;
+    }
   }
 }
 
@@ -58,17 +57,17 @@
   padding: 15px;
   margin-bottom: 15px;
   .title {
-    border-left: 5px solid $mainHighlighted;
+    border-left: 5px solid $colorHighlighted;
     padding-left: 10px;
     margin-left: -15px;
   }
   .comments-number {
     float: left;
   }
-  .show-more {
+  .more {
     float: right;
     span {
-      color: $mainHighlighted;
+      color: $colorHighlighted;
       font-weight: 800;
     }
   }
@@ -80,5 +79,24 @@
     background-color: lightgrey;
     margin-bottom: 5px;
     padding: 15px;
+  }
+}
+
+.photo {
+  background-color: #FFF;
+  margin: 0 25px;
+  padding: 0 30px;
+  img {
+    margin: 15px 0;
+  }
+  div:last-child {
+    text-align: center;
+  }
+  .btn {
+    padding: 6px 25px;
+    &.btn-primary {
+      background-color: $colorHighlighted;
+      border-color: $colorHighlighted;
+    }
   }
 }
