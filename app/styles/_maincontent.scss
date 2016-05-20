@@ -100,3 +100,27 @@
     }
   }
 }
+
+footer {
+  height: 41px;
+  padding: 10px 0;
+  background-color: $footerBgColor;
+  color: $footerFontColor;
+  font-size: 11px;
+  .row {
+    div:first-child {
+    float: left;
+    }
+    div:last-child {
+    float: right;
+    }
+  }
+  a {
+    color: $footerFontColor;
+    &:hover,
+    &:visited {
+      color: $footerFontColor;
+      text-decoration: none;
+    }
+  }
+}
