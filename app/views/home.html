@@ -36,13 +36,13 @@
               {{post.body}}
             </p>
             <div class="clearfix">
-              <div class="comments-number">3 comments</div>
+              <div class="comments-number">{{vm.comments.length}} comments</div>
               <div class="more">show all <span> > </span></div>
             </div>
             <div class="comments">
-              <div ng-repeat="i in [1, 2, 3]" class="comment">
+              <div ng-repeat="comment in vm.comments" class="comment">
                 <p>
-                  laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium
+                  {{comment.body}}
                 </p>
                 <span>emailicon</span><span>Eliseo@gardner.biz</span>
               </div>
