@@ -54,30 +54,12 @@
             <h5>Photo Album</h5>
             <hr>
           </div>
-          <div class="photo">
-            <div class="row">
-              <div class="col-xs-4">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-              </div>
-              <div class="col-xs-4">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-              </div>
-              <div class="col-xs-4">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-                <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
+          <div ng-controller="PhotosCtrl as vm" class="photo">
+              <img ng-repeat="photo in vm.photos | limitTo: 9" src="{{photo.thumbnailUrl}}" style="width: 70px; height: 70px; background-color: lightgrey">
+            <div>
                 <a class="btn btn-primary" href="">load more</a>
               </div>
-            </div>
-          </div> <!-- .photo -->
+          </div>
         </div>
       </div>
     </div>
