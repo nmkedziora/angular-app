@@ -23,17 +23,17 @@
         </div>
       </div>
       <div class="user-details row">
-        <div class="col-xs-7">
+        <div ng-controller="PostsCtrl as vm" class="col-xs-7">
           <div class="title">
             <h5>Latest Posts</h5>
             <hr>
           </div>
-          <div ng-repeat="i in [1, 2, 3]" class="post">
+          <div ng-repeat="post in vm.posts" class="post">
             <h4 class="title">
-              sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+              {{post.title}}
             </h4>
             <p class="body">
-              quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto
+              {{post.body}}
             </p>
             <div class="clearfix">
               <div class="comments-number">3 comments</div>
