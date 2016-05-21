@@ -117,8 +117,11 @@ footer {
   }
   a {
     color: $footerFontColor;
+    text-decoration: none;
     &:hover,
-    &:visited {
+    &:visited,
+    &:active,
+    &:link {
       color: $footerFontColor;
       text-decoration: none;
     }

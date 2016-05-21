@@ -1,4 +1,4 @@
-function ExampleCtrl(ExampleService) {
+function ExampleCtrl() {
 
   // ViewModel
   const vm = this;
@@ -6,18 +6,18 @@ function ExampleCtrl(ExampleService) {
   vm.title = 'AngularJS, Gulp, and Browserify! Written with keyboards and love!';
   vm.number = 1234;
 
-  ExampleService.get()
-    .then(data => {
-      console.log(data);
-      console.log(data.userId);
-    });
+  // ExampleService.get()
+  //   .then(data => {
+  //     console.log(data);
+  //     console.log(data.userId);
+  //   });
 
 
 }
 
-ExampleCtrl.$inject = [
-  'ExampleService'
-]
+// ExampleCtrl.$inject = [
+//   'ExampleService'
+// ]
 
 export default {
   name: 'ExampleCtrl',

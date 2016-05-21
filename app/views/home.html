@@ -1,35 +1,14 @@
-<header class="container-fluid">
-  <div class="row">
-    <div class="logo col-xs-10">
-      inter<span class="text-highlighted">face</span>
-    </div>
-    <div class="profile col-xs-2">
-      <img src="" style="width:30px; height: 30px; background-color: lightgrey">
-      Clementine Bauch
-      <span> + </span>
-      <div class="details">
-        <p>Samantha</p>
-        <div>
-          <p>Douglas Extension</p>
-          <p>Suite 847</p>
-          <p>McKenziehaven</p>
-          <p>6852556325</p>
-        </div>
-        <div>Edit</div>
-      </div>
-    </div>
-  </div>
-</header>
+<header ng-include="'header.html'" class="container-fluid"></header>
 
 <section class="container-fluid">
   <div class="row">
-    <div class="contacts col-xs-3">
-      <div ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="contact">
+    <div ng-controller="UsersCtrl as vm" class="contacts col-xs-3">
+      <div ng-repeat="user in vm.users" class="contact">
         <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
         <div>
-          <p>Leanne Graham</p>
-          <p>Bret</p>
-          <p><img src="">Sincere@april.biz</p>
+          <p>{{user.name}}</p>
+          <p>{{user.username}}</p>
+          <p><img src="">{{user.email}}</p>
         </div>
         <div class="more"> > </div>
       </div>
@@ -105,7 +84,7 @@
   </div>
 </section>
 
-<footer class="container-fluid">
+<!-- <footer class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
       <div>&copy; Interface, All rights reserved</div>
@@ -118,4 +97,5 @@
       </div>
     </div>
   </div>
-</footer>
+</footer> -->
+<my-footer-directive></my-footer-directive>
