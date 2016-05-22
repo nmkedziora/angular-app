@@ -2,6 +2,7 @@ function PhotosCtrl() {
 
   const vm = this;
 
+
   vm.photos = [
     {
     'albumId': 1,
@@ -130,7 +131,24 @@ function PhotosCtrl() {
     'thumbnailUrl': 'http://placehold.it/150/ee9c6f'
     },
   ];
+
+  vm.showImgModal = false;
+
+  vm.showImage = function(photo) {
+    console.log(photo);
+    vm.ImageUrl = photo.url;
+    vm.showImgModal = !vm.showImgModal;
+  }
+
+  vm.closeImage = function(){
+    vm.showImgModal = !vm.showImgModal;
+  }
+
+
 }
+
+
+
 
 export default {
   name: 'PhotosCtrl',

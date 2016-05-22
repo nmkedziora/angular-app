@@ -55,10 +55,28 @@
             <hr>
           </div>
           <div ng-controller="PhotosCtrl as vm" class="photo">
-              <img ng-repeat="photo in vm.photos | limitTo: 9" src="{{photo.thumbnailUrl}}" style="width: 70px; height: 70px; background-color: lightgrey">
+            <img ng-repeat="photo in vm.photos | limitTo: 9" ng-click="vm.showImage(photo)" src="{{photo.thumbnailUrl}}" style="width: 70px; height: 70px; background-color: lightgrey">
             <div>
-                <a class="btn btn-primary" href="">load more</a>
+              <a class="btn btn-primary" href="">load more</a>
+            </div>
+            <!-- Modal -->
+            <div ng-show="vm.showImgModal" class="modal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button ng-click="vm.closeImage()" type="button" class="close">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="{{vm.ImageUrl}}" class="img-responsive">
+                  </div>
+                  <div class="modal-footer">
+                    <button ng-click="vm.closeImage()" type="button" class="btn btn-secondary">Close</button>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
         </div>
       </div>

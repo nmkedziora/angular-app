@@ -99,6 +99,14 @@
       border-color: $colorHighlighted;
     }
   }
+  .modal {
+    display: block;
+    img {
+      width: auto;
+      height: 65vh;
+      margin: 0 auto;
+    }
+  }
 }
 
 footer {
