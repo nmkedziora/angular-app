@@ -2,16 +2,26 @@ function ProfileCtrl() {
 
   const vm = this;
 
-  vm.hide = true;
+  vm.showDetailsState = false;
+  vm.showEditModal = false;
 
   vm.showDetails = function() {
-    if (vm.hide === true) {
-      vm.hide = false;
+    if (vm.showDetailsState === true) {
+      vm.showDetailsState = false;
     } else {
-      vm.hide = true;
+      vm.showDetailsState = true;
     }
-    // or simmply: vm.hide = !vm.hide
+    // or simmply: vm.showDetailsState = !vm.showDetailsState
   };
+
+  vm.editProfile = function() {
+    console.log('edit');
+    vm.showEditModal = !vm.showEditModal;
+  }
+
+  vm.closeEditModal = function() {
+    vm.showEditModal = false;
+  }
 }
 
 export default {

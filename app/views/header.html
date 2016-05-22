@@ -7,7 +7,7 @@
       <img src="" style="width:30px; height: 30px; background-color: lightgrey">
       Clementine Bauch
       <span ng-click="vm.showDetails()"> click </span>
-      <div ng-hide="vm.hide" class="details">
+      <div ng-show="vm.showDetailsState" class="details">
         <p>Samantha</p>
         <div>
           <p>Douglas Extension</p>
@@ -15,7 +15,31 @@
           <p>McKenziehaven</p>
           <p>6852556325</p>
         </div>
-        <div>Edit</div>
+        <div ng-click="vm.editProfile()">Edit</div>
       </div>
+
+
+      <!-- Modal -->
+      <div ng-show="vm.showEditModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button ng-click="vm.closeEditModal()" type="button" class="close">
+                <span>&times;</span>
+              </button>
+              <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button ng-click="vm.closeEditModal()" type="button" class="btn btn-secondary">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
