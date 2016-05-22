@@ -3,11 +3,11 @@
     <div class="logo col-xs-10">
       inter<span class="text-highlighted">face</span>
     </div>
-    <div class="profile col-xs-2">
+    <div ng-controller="ProfileCtrl as vm" class="profile col-xs-2">
       <img src="" style="width:30px; height: 30px; background-color: lightgrey">
       Clementine Bauch
-      <span> + </span>
-      <div class="details">
+      <span ng-click="vm.showDetails()"> click </span>
+      <div ng-hide="vm.hide" class="details">
         <p>Samantha</p>
         <div>
           <p>Douglas Extension</p>
