@@ -10,8 +10,8 @@ function ExampleCtrl(ExampleService) {
 
   function onFulfiled (response) {
     vm.obiekt = response.data;
-    console.log(vm.obiekt);
-    console.log(vm.obiekt.title);
+    // console.log(vm.obiekt);
+    // console.log(vm.obiekt.title);
   }
 
   function onRejected () {
