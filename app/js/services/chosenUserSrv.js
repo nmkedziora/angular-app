@@ -1,17 +1,7 @@
-function ChosenUserService($http) {
+function ChosenUserService() {
   'ngInject'
 
   const service = {};
-
-  service.get = function() {
-    return new Promise((resolve, reject) => {
-      $http.get('http://jsonplaceholder.typicode.com/users').success((data) => {
-        resolve(data);
-      }).error((err, status) => {
-        reject(err, status);
-      });
-    });
-  }
 
   return service;
 
@@ -20,4 +10,4 @@ function ChosenUserService($http) {
 export default {
   name: 'ChosenUserService',
   fn: ChosenUserService
-};
+}
