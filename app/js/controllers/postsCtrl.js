@@ -6,7 +6,8 @@ class PostsCtrl {
     vm.chosenUserService = ChosenUserService;
 
     $scope.$watch('vm.chosenUserService.user', function() {
-      if (!vm.chosenUserService.user) {
+
+      if (!vm.chosenUserService.user) { // the first value === undefined
         return;
       }
       var chosenUserId = vm.chosenUserService.user.id;
@@ -16,6 +17,7 @@ class PostsCtrl {
 
     function onFulfilled(postsList) {
       vm.posts = postsList;
+      $scope.$apply();
     }
 
     function onRejected() {

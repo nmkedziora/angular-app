@@ -1,4 +1,4 @@
-function UsersCtrl(UsersService, ChosenUserService) {
+function UsersCtrl($scope, UsersService, ChosenUserService) {
 
   const vm = this;
   vm.chosenUserService = ChosenUserService;
@@ -12,6 +12,7 @@ function UsersCtrl(UsersService, ChosenUserService) {
   function onFulfilled(data) {
     vm.users = data;
     vm.chosenUserService.user = vm.users[0];
+    $scope.$apply();
   }
 
   function onRejected() {
@@ -21,6 +22,7 @@ function UsersCtrl(UsersService, ChosenUserService) {
 }
 
 UsersCtrl.$inject = [
+  '$scope',
   'UsersService',
   'ChosenUserService'
 ]

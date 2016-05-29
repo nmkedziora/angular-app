@@ -2,8 +2,8 @@
 
 <section class="container-fluid">
   <div class="row">
-    <div ng-controller="ChosenUserCtrl as vm" class="contacts col-xs-3">
-      <div ng-repeat="user in vm.users" class="contact">
+    <div ng-controller="UsersCtrl as vm" class="contacts col-xs-3">
+      <div ng-repeat="user in vm.users" ng-click="vm.getChosenUserId(user)" class="contact">
         <img src="" style="width: 70px; height: 70px; background-color: lightgrey">
         <div>
           <p>{{user.name}}</p>
@@ -13,13 +13,13 @@
         <div class="more"> > </div>
       </div>
     </div>
-    <div class="col-xs-9">
+    <div ng-controller="ChosenUserCtrl as vm" class="col-xs-9">
       <div class="row">
         <div class="user col-xs-12">
           <img src="" style="width: 155px; height: 140px; background-color: grey">
-          <h3>Leanne Graham</h3>
-          <p>hildegard.org</p>
-          <small>Romanquera-Crona / Multi-layered client-server neural-net</small>
+          <h3>{{vm.chosenUserService.user.name}}</h3>
+          <p>{{vm.chosenUserService.user.website}}</p>
+          <small>{{vm.chosenUserService.user.company.name}} / {{vm.chosenUserService.user.company.catchPhrase}} </small>
         </div>
       </div>
       <div class="user-details row">
