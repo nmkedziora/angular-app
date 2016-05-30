@@ -36,15 +36,15 @@
               {{post.body}}
             </p>
             <div class="clearfix">
-              <div class="comments-number">{{vm.comments.length}} comments</div>
-              <div class="more">show all <span> > </span></div>
+              <div class="comments-number">XXX comments</div>
+              <div ng-click="vm.getComments(post)" class="more">show all <span> > </span></div>
             </div>
-            <div class="comments">
-              <div ng-repeat="comment in vm.comments" class="comment">
+            <div ng-repeat="comment in vm.comments" class="comments">
+              <div class="comment">
                 <p>
                   {{comment.body}}
                 </p>
-                <span>emailicon</span><span>Eliseo@gardner.biz</span>
+                <span></span><span>{{comment.email}}</span>
               </div>
             </div>
           </div>
