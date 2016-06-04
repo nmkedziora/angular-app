@@ -5,6 +5,7 @@ function UsersCtrl($scope, UsersService, ChosenUserService) {
 
   vm.getChosenUserId = function(user) {
     vm.chosenUserService.user = user;
+    console.log('user id:', vm.chosenUserService.user.id);
   }
 
   UsersService.get().then(onFulfilled, onRejected);

@@ -39,7 +39,7 @@
               <div class="comments-number">XXX comments</div>
               <div ng-click="vm.getComments(post)" class="more">show all <span> > </span></div>
             </div>
-            <div ng-repeat="comment in vm.comments" class="comments">
+            <div ng-repeat="comment in vm.comments[post.id]" class="comments">
               <div class="comment">
                 <p>
                   {{comment.body}}

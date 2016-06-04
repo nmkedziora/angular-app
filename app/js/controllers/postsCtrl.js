@@ -4,14 +4,22 @@ class PostsCtrl {
 
     const vm = this;
     vm.chosenUserService = ChosenUserService;
+    vm.comments = {};
+
 
     vm.getComments = function(post) {
       var chosenPostId = post.id;
 
-    CommentsService.get(chosenPostId).then(commentsOnFulfilled, commentsOnRejected);
+
+      console.log('this:', vm);
+      console.log('post id:', chosenPostId);
+
+      CommentsService.get(chosenPostId).then(commentsOnFulfilled, commentsOnRejected);
 
       function commentsOnFulfilled(comments) {
-        vm.comments = comments;
+        vm.comments[post.id] = comments;
+
+        console.log('comments:', vm.comments);
         $scope.$apply();
       }
 
