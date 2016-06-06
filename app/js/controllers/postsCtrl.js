@@ -7,51 +7,35 @@ class PostsCtrl {
     vm.comments = {};
 
 
-    vm.getComments = function(post) {
+    vm.getComments = post => {
       var chosenPostId = post.id;
 
       if(vm.comments[post.id]) {
         return
       }
 
-      CommentsService.get(chosenPostId).then(commentsOnFulfilled, commentsOnRejected);
-
-
-      function commentsOnFulfilled(comments) {
-        vm.comments[post.id] = comments;
-
-        $scope.$apply();
-      }
-
-
-      function commentsOnRejected() {
-        console.log('comments error');
-      }
+      CommentsService.get(chosenPostId).then(comments => {
+          vm.comments[post.id] = comments;
+          $scope.$apply();
+        }, () => console.log('comments error')
+      );
     }
 
-    vm.toggleComments = function(post) {
-      post.commentsVisible = !post.commentsVisible;
-    }
+    vm.toggleComments = post => post.commentsVisible = !post.commentsVisible;
 
 
-    $scope.$watch('vm.chosenUserService.user', function() {
+    $scope.$watch('vm.chosenUserService.user', () => {
       if (!vm.chosenUserService.user) { // the first value === undefined
         return;
       }
       var chosenUserId = vm.chosenUserService.user.id;
-      PostsService.get(chosenUserId).then(onFulfilled, onRejected);
+
+      PostsService.get(chosenUserId).then(postsList => {
+          vm.posts = postsList;
+          $scope.$apply();
+        }, () => console.log('posts error')
+      );
     });
-
-
-    function onFulfilled(postsList) {
-      vm.posts = postsList;
-      $scope.$apply();
-    }
-
-
-    function onRejected() {
-      console.log('posts error');
-    }
   }
 }
 
