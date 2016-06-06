@@ -10,26 +10,28 @@ class PostsCtrl {
     vm.getComments = function(post) {
       var chosenPostId = post.id;
 
-
-      console.log('this:', vm);
-      console.log('post id:', chosenPostId);
+      if(vm.comments[post.id]) {
+        return
+      }
 
       CommentsService.get(chosenPostId).then(commentsOnFulfilled, commentsOnRejected);
+
 
       function commentsOnFulfilled(comments) {
         vm.comments[post.id] = comments;
 
-        console.log('comments:', vm.comments);
         $scope.$apply();
       }
+
 
       function commentsOnRejected() {
         console.log('comments error');
       }
     }
 
-
-
+    vm.toggleComments = function(post) {
+      post.commentsVisible = !post.commentsVisible;
+    }
 
 
     $scope.$watch('vm.chosenUserService.user', function() {
@@ -45,6 +47,7 @@ class PostsCtrl {
       vm.posts = postsList;
       $scope.$apply();
     }
+
 
     function onRejected() {
       console.log('posts error');
