@@ -50,12 +50,12 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-5">
+        <div ng-controller="PhotosCtrl as vm" class="col-xs-5">
           <div class="title">
             <h5>Photo Album</h5>
             <hr>
           </div>
-          <div ng-controller="PhotosCtrl as vm" class="photo">
+          <div class="photo">
             <img ng-repeat="photo in vm.photos | limitTo: 9" ng-click="vm.showImage(photo)" src="{{photo.thumbnailUrl}}" style="width: 70px; height: 70px; background-color: lightgrey">
             <div>
               <a class="btn btn-primary" href="">load more</a>
