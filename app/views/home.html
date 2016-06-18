@@ -56,9 +56,9 @@
             <hr>
           </div>
           <div class="photo">
-            <img ng-repeat="photo in vm.photos | limitTo: 9" ng-click="vm.showImage(photo)" src="{{photo.thumbnailUrl}}" style="width: 70px; height: 70px; background-color: lightgrey">
+            <img ng-repeat="photo in vm.photos | limitTo: vm.photosLimit" ng-click="vm.showImage(photo)" src="{{photo.thumbnailUrl}}" style="width: 70px; height: 70px; background-color: lightgrey">
             <div>
-              <a class="btn btn-primary" href="">load more</a>
+              <a ng-click="vm.loadMorePhotos()" class="btn btn-primary" href="">load more</a>
             </div>
             <!-- Modal -->
             <div ng-show="vm.showImgModal" class="modal">

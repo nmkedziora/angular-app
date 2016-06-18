@@ -4,6 +4,7 @@ class PhotosCtrl {
 
     const vm = this;
     vm.ChosenUserService = ChosenUserService;
+    vm.photosLimit = 9;
 
     $scope.$watch('vm.ChosenUserService.user', function() {
       console.log(vm.ChosenUserService.user);
@@ -46,6 +47,10 @@ class PhotosCtrl {
 
     vm.closeImage = function(){
       vm.showImgModal = !vm.showImgModal;
+    }
+
+    vm.loadMorePhotos = function() {
+      vm.photosLimit += 3;
     }
   }
 
